@@ -1,7 +1,8 @@
 import React from 'react';
+import style from './Button.module.css';
 const Button = ({ loadMore }) => {
   return (
-    <button className="button" onClick={loadMore}>
+    <button className={style.Button} onClick={loadMore}>
       Load more
     </button>
   );

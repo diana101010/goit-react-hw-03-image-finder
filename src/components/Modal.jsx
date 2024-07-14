@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Modal.module.css';
 const Modal = ({ imageUrl, closeModal }) => {
   const handleKeyDown = e => {
     if (e.keyCode === 27) {
@@ -8,7 +9,7 @@ const Modal = ({ imageUrl, closeModal }) => {
 
   return (
     <div
-      className="overlay"
+      className={style.Overlay}
       onClick={closeModal}
       onKeyDown={handleKeyDown}
       tabIndex="0"
@@ -22,7 +23,7 @@ const Modal = ({ imageUrl, closeModal }) => {
 
 const Button = ({ loadMore }) => {
   return (
-    <button className="button" onClick={loadMore}>
+    <button className={style.Overlay} onClick={loadMore}>
       Load more
     </button>
   );

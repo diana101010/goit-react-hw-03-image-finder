@@ -1,8 +1,13 @@
 import React from 'react';
+import style from './ImageGalleryItem.module.css';
 const ImageGalleryItem = ({ image }) => {
   return (
-    <li className="gallery-item">
-      <img src={image.webformatURL} alt={image.id} />
+    <li className={style.ImageGalleryItem}>
+      <img
+        className={style.ImageGalleryItem - image}
+        src={image.webformatURL}
+        alt={image.id}
+      />
     </li>
   );
 };

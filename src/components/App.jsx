@@ -5,9 +5,8 @@ import Loader from './Loader';
 import Searchbar from './SearchBar';
 import Modal from './Modal';
 import axios from 'axios';
+import { API_KEY, API_URL } from './API';
 
-const API_URL =
-  'https://pixabay.com/api/?q=cat&page=1&key=your_key&image_type=photo&orientation=horizontal&per_page=12';
 const App = () => {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
+import style from './SearchBar.module.css';
 
-const API_KEY = '44928862-d2f2bbe0bebe323e8b9f048e4';
-const API_URL =
-  'https://pixabay.com/api/?q=cat&page=1&key=your_key&image_type=photo&orientation=horizontal&per_page=12';
-
-const Searchbar = ({ onSubmit }) => {
+const Searchbar = ({ onSubmit, apiUrl, apiKey }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleInputChange = e => {
@@ -13,19 +10,19 @@ const Searchbar = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(searchQuery);
+    onSubmit(searchQuery, apiUrl, apiKey);
     setSearchQuery('');
   };
 
   return (
     <header className="searchbar">
-      <form className="form" onSubmit={handleSubmit}>
-        <button type="submit" className="button">
+      <form className={style.searchForm} onSubmit={handleSubmit}>
+        <button type="submit" className={style.searchFormbutton}>
           <span className="button-label">Search</span>
         </button>
 
         <input
-          className="input"
+          className={style.searchForminput}
           type="text"
           value={searchQuery}
           onChange={handleInputChange}
