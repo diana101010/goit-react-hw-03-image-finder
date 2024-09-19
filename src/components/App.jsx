@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Searchbar from './Searchbar';
+import Searchbar from '../components/Searchbar';
 import ImageGallery from './ImageGallery';
 import Button from './Button';
 import Modal from './Modal';
@@ -22,7 +22,7 @@ const App = () => {
         `https://pixabay.com/api/?key=${API_KEY}&q=${searchQuery}&page=${page}&per_page=12`
       );
       if (response.data.hits.length === 0) {
-        alert('No images found for your query.'); // User feedback for empty results
+        alert('No images found for your query.');
       }
       setImages(prevImages => [...prevImages, ...response.data.hits]);
     } catch (error) {
