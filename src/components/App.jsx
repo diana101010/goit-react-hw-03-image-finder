@@ -15,7 +15,6 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
-  // Fetch images from the Pixabay API
   const fetchImages = async (searchQuery, page) => {
     setLoading(true);
     try {
