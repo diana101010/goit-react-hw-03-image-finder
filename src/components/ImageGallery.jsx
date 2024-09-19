@@ -4,7 +4,7 @@ import styles from './ImageGallery.module.css';
 
 const ImageGallery = ({ images, onImageClick }) => {
   return (
-    <ul className={styles.ImageGalleryItem}>
+    <ul className={styles.ImageGallery}>
       {images.map(image => (
         <ImageGalleryItem
           key={image.id}
