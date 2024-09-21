@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
+import styles from './Searchbar.module.css';
 
 const Searchbar = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
