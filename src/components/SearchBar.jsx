@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Searchbar.module.css';
 
 const Searchbar = ({ onSubmit }) => {
@@ -6,6 +7,7 @@ const Searchbar = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (inputValue.trim() === '') return;
     onSubmit(inputValue);
     setInputValue('');
   };
@@ -13,7 +15,11 @@ const Searchbar = ({ onSubmit }) => {
   return (
     <header className={styles.Searchbar}>
       <form className={styles.SearchForm} onSubmit={handleSubmit}>
-        <button type="submit" className={styles.SearchFormButton}>
+        <button
+          type="submit"
+          className={styles.SearchFormButton}
+          aria-label="Search"
+        >
           <span className={styles.SearchFormButtonLabel}>Search</span>
         </button>
         <input
@@ -28,6 +34,10 @@ const Searchbar = ({ onSubmit }) => {
       </form>
     </header>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Searchbar;
